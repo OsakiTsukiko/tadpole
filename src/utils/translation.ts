@@ -43,6 +43,6 @@ const Translation = {
     }
 }
 
-export function getTr(lang: string) {
+export function getTr(_: string) {
     return Translation;
 }
