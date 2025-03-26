@@ -4,10 +4,13 @@ function TextInput(args: {
     id: string,
     span: string,
     placeholder: string,
+    name: string,
+    autocomplete: string,
+    type: string,
 }) {
     return (
         <label className='text-input' htmlFor={args.id}>
-            <input type='text' id={args.id} placeholder={args.placeholder} className='roboto' />
+            <input type={args.type} id={args.id} placeholder={args.placeholder} className='roboto' name={args.name} autoComplete={args.autocomplete} />
             <span className='roboto unselectable'>{args.span}</span>
         </label>
     )
@@ -17,10 +20,12 @@ function PasswordInput(args: {
     id: string,
     span: string,
     placeholder: string,
+    name: string,
+    autocomplete: string,
 }) {
     return (
         <label className='text-input' htmlFor={args.id}>
-            <input type='password' id={args.id} placeholder={args.placeholder} className='roboto' />
+            <input type='password' id={args.id} placeholder={args.placeholder} className='roboto' name={args.name} autoComplete={args.autocomplete} />
             <span className='roboto unselectable'>{args.span}</span>
         </label>
     )
@@ -38,9 +43,10 @@ function TextButton(args: {
     prefix: string,
     text: string,
     suffix: string,
+    onclick: () => void,
 }) {
     return (
-        <span className='text-button roboto'>{args.prefix} <span className='button roboto'>{args.text}</span> {args.suffix}</span>
+        <span className='text-button roboto'>{args.prefix} <span className='button roboto' onClick={args.onclick}>{args.text}</span> {args.suffix}</span>
     )
 }
 

@@ -4,24 +4,26 @@ import Title from './Title'
 import TitleIcon from '../assets/frog.png';
 import { useNavigate } from "react-router";
 
-function Login() {
+function Register() {
     let navigate = useNavigate();
 
     return (
-        <div className='login'>
+        <div className='register'>
             <div className='content'>
-                <Title title='Return to the Pond!' subtitle='Your lily pad is just a hop away! Login to continue your pond journey.' icon={TitleIcon} />
+                <Title title='Join the Pond!' subtitle=' Every tadpole needs a lily pad. Create yours today! ' icon={TitleIcon} />
                 <div className='input-cont'>
                     <TextInput id={'username'} span={'Your Lily Pad Name'} placeholder={'Username'} name='username' autocomplete='username' type='text' />
+                    <TextInput id={'email'} span={'Pond Mail'} placeholder={'Email'} name='email' autocomplete='email' type='email' />
                     <PasswordInput id={'password'} span={'Secret Ribbit'} placeholder={'Password'} name='password' autocomplete='password' />
-                    <ButtonInput text='Hop In!' />
+                    <PasswordInput id={'confirm-password'} span={'Confirm Secret Ribbit'} placeholder={'Confirm Password'} name='' autocomplete='' />
+                    <ButtonInput text='Take a Leap In!' />
                 </div>
-                <TextButton prefix='New to the pond?' text='Hop over to register!' suffix='🌿' onclick={() => {
-                    navigate("/register");
+                <TextButton prefix='Already have a pad?' text='Leap back in!' suffix='🌿' onclick={() => {
+                    navigate("/login");
                 }} />
             </div>
         </div>
     )
 }
 
-export default Login
+export default Register
