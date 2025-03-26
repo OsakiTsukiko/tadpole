@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+html, body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+#root .login {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: #272c29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root .login .content {
+  min-width: 500px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#root .text-input {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 10px;
+  background: #38413a;
+  border: 1px solid #4b554d;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: text;
+}
+#root .text-input input {
+  flex: 1;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: #b5dda2;
+}
+#root .text-input input::-moz-placeholder {
+  color: #79916f;
+}
+#root .text-input input::placeholder {
+  color: #79916f;
+}
+#root .text-input span {
+  color: #b5dda2;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none; /* Standard syntax */
+}/*# sourceMappingURL=styles.css.map */

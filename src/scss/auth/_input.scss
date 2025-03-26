@@ -1,0 +1,41 @@
+.text-input {
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10px;
+
+    background: $text-input-background;
+    border: 1px solid $text-input-border;
+    border-radius: 5px;
+
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    cursor: text;
+    
+    input {
+        flex: 1;
+        background: transparent;
+        border: 0px;
+        outline: none;
+
+        font-weight: 400;
+        font-size: 16px;
+
+        color: $text-input-color;
+
+        &::placeholder {
+            color: $text-input-placeholder-color;
+        }
+    }
+
+    span {
+        color: $text-input-color;
+
+        font-weight: 900;
+        font-size: 16px;
+    }
+}
