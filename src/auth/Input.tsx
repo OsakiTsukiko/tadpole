@@ -7,10 +7,11 @@ function TextInput(args: {
     name: string,
     autocomplete: string,
     type: string,
+    input_ref: React.RefObject<HTMLInputElement | null>,
 }) {
     return (
         <label className='text-input' htmlFor={args.id}>
-            <input type={args.type} id={args.id} placeholder={args.placeholder} className='roboto' name={args.name} autoComplete={args.autocomplete} />
+            <input type={args.type} id={args.id} placeholder={args.placeholder} className='roboto' name={args.name} autoComplete={args.autocomplete} ref={args.input_ref} />
             <span className='roboto unselectable'>{args.span}</span>
         </label>
     )
@@ -22,10 +23,11 @@ function PasswordInput(args: {
     placeholder: string,
     name: string,
     autocomplete: string,
+    input_ref: React.RefObject<HTMLInputElement | null>,
 }) {
     return (
         <label className='text-input' htmlFor={args.id}>
-            <input type='password' id={args.id} placeholder={args.placeholder} className='roboto' name={args.name} autoComplete={args.autocomplete} />
+            <input type='password' id={args.id} placeholder={args.placeholder} className='roboto' name={args.name} autoComplete={args.autocomplete} ref={args.input_ref} />
             <span className='roboto unselectable'>{args.span}</span>
         </label>
     )
@@ -33,9 +35,10 @@ function PasswordInput(args: {
 
 function ButtonInput(args: {
     text: string,
+    onclick: () => void,
 }) {
     return (
-        <button className='button-input roboto unselectable'>{args.text}</button>
+        <button className='button-input roboto unselectable' onClick={args.onclick}>{args.text}</button>
     )
 }
 

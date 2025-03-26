@@ -41,7 +41,7 @@ html, body {
   flex-direction: column;
   gap: 15px;
 }
-#root .text-input {
+#root .login .text-input, #root .register .text-input {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -57,7 +57,7 @@ html, body {
   align-items: center;
   cursor: text;
 }
-#root .text-input input {
+#root .login .text-input input, #root .register .text-input input {
   flex: 1;
   background: transparent;
   border: 0px;
@@ -66,18 +66,18 @@ html, body {
   font-size: 16px;
   color: #A4D48C;
 }
-#root .text-input input::-moz-placeholder {
+#root .login .text-input input::-moz-placeholder, #root .register .text-input input::-moz-placeholder {
   color: #657a5a;
 }
-#root .text-input input::placeholder {
+#root .login .text-input input::placeholder, #root .register .text-input input::placeholder {
   color: #657a5a;
 }
-#root .text-input span {
+#root .login .text-input span, #root .register .text-input span {
   color: #A4D48C;
   font-weight: 900;
   font-size: 16px;
 }
-#root .button-input {
+#root .login .button-input, #root .register .button-input {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -93,43 +93,57 @@ html, body {
   transition: 0.125s;
   cursor: pointer;
 }
-#root .button-input:hover {
+#root .login .button-input:hover, #root .register .button-input:hover {
   background: #A4D48C;
 }
-#root .text-button {
+#root .login .text-button, #root .register .text-button {
   font-size: 18;
   font-weight: 400;
   color: #657a5a;
   width: 100%;
   text-align: center;
 }
-#root .text-button .button {
+#root .login .text-button .button, #root .register .text-button .button {
   font-weight: 900;
   text-decoration: underline;
   transition: 0.125s;
   cursor: pointer;
 }
-#root .text-button .button:hover {
+#root .login .text-button .button:hover, #root .register .text-button .button:hover {
   color: #A4D48C;
 }
-#root .title-cont {
+#root .login .title-cont, #root .register .title-cont {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-#root .title-cont .title {
+#root .login .title-cont .title, #root .register .title-cont .title {
   font-size: 40px;
   font-weight: 900;
   color: #A4D48C;
 }
-#root .title-cont .title img {
+#root .login .title-cont .title img, #root .register .title-cont .title img {
   width: 30px;
   height: 30px;
 }
-#root .title-cont .subtitle {
+#root .login .title-cont .subtitle, #root .register .title-cont .subtitle {
   font-size: 24px;
   font-weight: 900;
   color: #657a5a;
+}
+#root .login .error-popup, #root .register .error-popup {
+  width: 100%;
+  box-sizing: border-box;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  background: #743a3a;
+  border: 1px solid #cd5c5c;
+  border-radius: 5px;
+  color: #ffe4e0;
+  font-weight: 900;
+  font-size: 18px;
+  text-align: justify;
 }
 
 .roboto {

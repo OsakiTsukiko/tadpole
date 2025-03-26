@@ -1,0 +1,16 @@
+.error-popup {
+    width: 100%;
+    box-sizing: border-box;
+    height: fit-content;
+    
+    padding: 10px;
+
+    background: $error-popup-background;
+    border: 1px solid $error-popup-border;
+    border-radius: 5px;
+
+    color: $error-popup-color;
+    font-weight: 900;
+    font-size: 18px;
+    text-align: justify;
+}
