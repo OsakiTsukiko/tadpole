@@ -17,15 +17,23 @@ html, body {
   height: 100%;
   box-sizing: border-box;
   margin: 0 auto;
-  background: #272c29;
+  background: #242825;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #root .login .content {
-  min-width: 500px;
-  width: -moz-fit-content;
-  width: fit-content;
+  max-width: 450px;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#root .login .content .input-cont {
+  width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   box-sizing: border-box;
@@ -40,8 +48,8 @@ html, body {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 10px;
-  background: #38413a;
-  border: 1px solid #4b554d;
+  background: #2f3530;
+  border: 1px solid #3d463f;
   border-radius: 5px;
   display: flex;
   gap: 10px;
@@ -56,18 +64,72 @@ html, body {
   outline: none;
   font-weight: 400;
   font-size: 16px;
-  color: #b5dda2;
+  color: #A4D48C;
 }
 #root .text-input input::-moz-placeholder {
-  color: #79916f;
+  color: #657a5a;
 }
 #root .text-input input::placeholder {
-  color: #79916f;
+  color: #657a5a;
 }
 #root .text-input span {
-  color: #b5dda2;
+  color: #A4D48C;
   font-weight: 900;
   font-size: 16px;
+}
+#root .button-input {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 10px;
+  background: #657a5a;
+  color: #2f3530;
+  font-weight: 900;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 5px;
+  transition: 0.125s;
+  cursor: pointer;
+}
+#root .button-input:hover {
+  background: #A4D48C;
+}
+#root .text-button {
+  font-size: 18;
+  font-weight: 400;
+  color: #657a5a;
+  width: 100%;
+  text-align: center;
+}
+#root .text-button .button {
+  font-weight: 900;
+  text-decoration: underline;
+  transition: 0.125s;
+  cursor: pointer;
+}
+#root .text-button .button:hover {
+  color: #A4D48C;
+}
+#root .title-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#root .title-cont .title {
+  font-size: 40px;
+  font-weight: 900;
+  color: #A4D48C;
+}
+#root .title-cont .title img {
+  width: 30px;
+  height: 30px;
+}
+#root .title-cont .subtitle {
+  font-size: 24px;
+  font-weight: 900;
+  color: #657a5a;
 }
 
 .roboto {

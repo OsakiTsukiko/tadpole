@@ -1,6 +1,22 @@
-$background-main: #272c29;
+$accent: #A4D48C;
+$accent-dark: #657a5a;
 
-$text-input-background: #38413a;
-$text-input-border: #4b554d;
-$text-input-color: #b5dda2;
-$text-input-placeholder-color: #79916f;
+$background-main: #242825;
+$background-main-lighter: #2f3530;
+
+// -----
+
+$text-input-background: $background-main-lighter;
+$text-input-border: #3d463f;
+$text-input-color: $accent;
+$text-input-placeholder-color: $accent-dark;
+
+$button-input-background: $accent-dark;
+$button-input-background-hover: $accent;
+$button-input-color: $background-main-lighter;
+
+$title-color: $accent;
+$subtitle-color: $accent-dark;
+
+$text-button-color: $accent-dark;
+$text-button-color-hover: $accent;

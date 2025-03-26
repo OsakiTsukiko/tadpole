@@ -39,3 +39,48 @@
         font-size: 16px;
     }
 }
+
+.button-input {
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10px;
+
+    background: $button-input-background;
+    color: $button-input-color;
+    font-weight: 900;
+    font-size: 18px;
+
+    border: 0px;
+    border-radius: 5px;
+
+    transition: .125s;
+    cursor: pointer;
+
+    &:hover {
+        background: $button-input-background-hover;
+    }
+}
+
+.text-button {
+    font-size: 18;
+    font-weight: 400;
+
+    color: $text-button-color;
+
+    width: 100%;
+    text-align: center;
+
+    .button {
+        font-weight: 900;
+        text-decoration: underline;
+
+        transition: .125s;
+        cursor: pointer;
+
+        &:hover {
+            color: $text-button-color-hover;
+        }
+    }
+}
