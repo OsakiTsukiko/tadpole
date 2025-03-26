@@ -3,13 +3,15 @@ export class Seedling {
     name: string;
     description: string;
 
-    sprinkles: Array<string>;
+    sprinkles: string[];
     creation_date: number;
+
+    is_public: boolean = false;
 
     constructor (
         name: string,
         description: string,
-        sprinkles: Array<string> = [],
+        sprinkles: string[] = [],
         creation_date: number,
     ) {
         this.name = name;
@@ -32,7 +34,7 @@ export class Tadpole {
 
     reg_date: number;
 
-    seedlings: Array<Seedling> = [];
+    seedlings: Seedling[] = [];
 
     constructor (
         username: string,

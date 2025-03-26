@@ -1,4 +1,4 @@
-import { Seedling } from "../domain/user";
+import { Seedling, Tadpole } from "../domain/user";
 
 const Name = {
     first: [
@@ -42,4 +42,21 @@ export function makeRandomSeedling(): Seedling {
         (new Date()).getTime()
     );
     // TODO: add sprinkles
+}
+
+export function makeRandomTadpole(): Tadpole {
+    const name = randomName();
+    const tadpole = new Tadpole(
+        `${name.first.toLowerCase()}${name.second.toLowerCase()}`,
+        `${name.first.toLowerCase()}@${name.second.toLowerCase()}.com`,
+        `${name.first.toLowerCase()}${name.second.toLowerCase()}`,
+        `Hello! I am ${name.first} ${name.second} and I love writing code!`,
+        (new Date()).getTime() + ( - 1000 * 3600 * 24 * 10 + Math.floor(Math.random() * 1000 * 3600 * 24 * 10) ), // 10 days delta
+    );
+
+    for (let i = 0; i < 30; i += 1) {
+        while (!tadpole.addSeedling(makeRandomSeedling())) {}
+    }
+
+    return tadpole;
 }

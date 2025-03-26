@@ -39,6 +39,7 @@ const Translation = {
             password: 'Invalid password! Password must be between 6 and 32 characters long and only contain "A-Z a-z 0-9 and -!_$#@"',
             email: 'Invalid email!',
             confirm_password: 'Passwords DO NOT match!',
+            unable_to_login: 'Login error! Please check if the username and password are correct!',
         }
     }
 }

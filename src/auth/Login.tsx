@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { isPasswordValid, isUsernameValid } from '../utils/user_details';
 import ErrorPopup from './Error';
 import { getTr } from '../utils/translation';
+import { useTadpoles } from '../TadpoleProvider';
 
 function Login() {
     let navigate = useNavigate();
@@ -15,6 +16,8 @@ function Login() {
     let password_input: React.RefObject<HTMLInputElement | null> = React.createRef();
 
     const [error, setError] = useState<string | null>(null);
+
+    const { handleLogin } = useTadpoles();
 
     return (
         <div className='login'>
@@ -41,6 +44,12 @@ function Login() {
 
                         if (!isPasswordValid(password)) {
                             setError(getTr('en').log_reg.error.password);
+                            return;
+                        }
+
+                        const success = handleLogin(username, password);
+                        if (!success) {
+                            setError(getTr('en').log_reg.error.unable_to_login);
                             return;
                         }
 
