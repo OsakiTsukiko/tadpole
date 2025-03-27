@@ -5,7 +5,7 @@ import { useTadpoles } from '../TadpoleProvider';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 function Stats() {
-    const { currentTP, tadpoles } = useTadpoles();
+    const { currentTP, tadpoles, addRandomTadpole, isDev } = useTadpoles();
 
     const filteredTadpoles = tadpoles.sort((a, b) => 
         b.seedlings.length - a.seedlings.length
@@ -26,6 +26,9 @@ function Stats() {
                     </div>
                 )}
             </div>
+            {isDev && <div className='controlls'>
+                <ButtonInput text='Add Random Tadpole' onclick={() => { addRandomTadpole(); }} disabled={false} />
+            </div>}
             <div className='chart'>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={chartData}>

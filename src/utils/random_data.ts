@@ -54,7 +54,7 @@ export function makeRandomTadpole(): Tadpole {
         (new Date()).getTime() + ( - 1000 * 3600 * 24 * 10 + Math.floor(Math.random() * 1000 * 3600 * 24 * 10) ), // 10 days delta
     );
 
-    for (let i = 0; i < 10 + Math.floor(Math.random() * 90); i += 1) {
+    for (let i = 0; i < 10 + Math.floor(Math.random() * 100); i += 1) {
         while (!tadpole.addSeedling(makeRandomSeedling())) {}
     }
 

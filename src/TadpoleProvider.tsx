@@ -13,6 +13,8 @@ interface TadpoleContextType {
     handleRegister: (username: string, email: string, password: string, navigate: NavigateFunction) => boolean;
     updateTadpole: (u: Tadpole) => void;
     removeTadpole: (username: string) => void;
+    isDev: boolean;
+    addRandomTadpole: () => void;
 }
 
 const TadpoleContext = createContext<TadpoleContextType | undefined>(undefined);
@@ -20,6 +22,7 @@ const TadpoleContext = createContext<TadpoleContextType | undefined>(undefined);
 export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
     const [tadpoles, setTadpoles] = useState<Tadpole[]>([]);
     const [currentTP, setCurrentTP] = useState<Tadpole | null>(null);
+    const isDev = true;
 
     // Generate initial data
     function generateData() {
@@ -36,7 +39,7 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
     }
 
     // Call it once on component mount
-    useState(generateData);
+    if (isDev) useState(generateData);
 
     const handleLogin = (username: string, password: string, navigate: NavigateFunction): boolean => {
 
@@ -86,8 +89,20 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
       );
     }
 
+    const addRandomTadpole = (): void => {
+        let tp = makeRandomTadpole();
+        while (hasTadpole(tadpoles, tp.username)) {
+            tp = makeRandomTadpole();
+        }
+
+        setTadpoles([
+            ...tadpoles,
+            tp
+        ]);
+    }
+
     return (
-        <TadpoleContext.Provider value={{ tadpoles, currentTP, setTP, handleLogin, handleRegister, updateTadpole, removeTadpole }}>
+        <TadpoleContext.Provider value={{ tadpoles, currentTP, setTP, handleLogin, handleRegister, updateTadpole, removeTadpole, isDev, addRandomTadpole }}>
           {children}
         </TadpoleContext.Provider>
     );
