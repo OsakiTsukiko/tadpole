@@ -36,7 +36,7 @@ function Register() {
                     <TextInput id={'email'} span={getTr('en').register.email_input.label} placeholder={getTr('en').register.email_input.placeholder} name='email' autocomplete='email' type='email' input_ref={email_input} />
                     <PasswordInput id={'password'} span={getTr('en').register.password_input.label} placeholder={getTr('en').register.password_input.placeholder} name='password' autocomplete='password' input_ref={password_input} />
                     <PasswordInput id={'confirm-password'} span={getTr('en').register.confirm_password_input.label} placeholder={getTr('en').register.confirm_password_input.placeholder} name='' autocomplete='' input_ref={confirm_password_input} />
-                    <ButtonInput text='Take a Leap In!' onclick={() => {
+                    <ButtonInput disabled={false} text='Take a Leap In!' onclick={() => {
                         setError(null)
                         let username, email, password, confirm_password;
                         if (username_input.current != null) {

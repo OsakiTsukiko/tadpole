@@ -24,7 +24,7 @@ function Seedlings() {
         <div className='seedlings'>
             <div className='top-bar'>
                 <TextInput id='search' span={getTr('en').home.seedling.search_input.label} placeholder={getTr('en').home.seedling.search_input.placeholder} name='search' autocomplete='search' type='text' input_ref={search_input} />
-                <ButtonInput text={getTr('en').home.seedling.search_button.label} onclick={() => setSearchQuery(search_input.current?.value || '')} />
+                <ButtonInput disabled={false} text={getTr('en').home.seedling.search_button.label} onclick={() => setSearchQuery(search_input.current?.value || '')} />
             </div>
             <div className='content'>
                 {filteredSeedlings.map(seedling => (

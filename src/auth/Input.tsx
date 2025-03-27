@@ -36,9 +36,10 @@ function PasswordInput(args: {
 function ButtonInput(args: {
     text: string,
     onclick: () => void,
+    disabled: boolean,
 }) {
     return (
-        <button className='button-input roboto unselectable' onClick={args.onclick}>{args.text}</button>
+        <button disabled={args.disabled} className='button-input roboto unselectable' onClick={args.onclick}>{args.text}</button>
     )
 }
 

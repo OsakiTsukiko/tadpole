@@ -415,15 +415,7 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-#root .home .content .tadpoles .top-bar {
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  box-sizing: border-box;
-  display: flex;
-  gap: 10px;
-}
-#root .home .content .tadpoles .top-bar .text-input {
+#root .home .content .tadpoles .text-input {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -439,7 +431,7 @@ html, body {
   align-items: center;
   cursor: text;
 }
-#root .home .content .tadpoles .top-bar .text-input input {
+#root .home .content .tadpoles .text-input input {
   flex: 1;
   background: transparent;
   border: 0px;
@@ -448,18 +440,18 @@ html, body {
   font-size: 16px;
   color: #A4D48C;
 }
-#root .home .content .tadpoles .top-bar .text-input input::-moz-placeholder {
+#root .home .content .tadpoles .text-input input::-moz-placeholder {
   color: #657a5a;
 }
-#root .home .content .tadpoles .top-bar .text-input input::placeholder {
+#root .home .content .tadpoles .text-input input::placeholder {
   color: #657a5a;
 }
-#root .home .content .tadpoles .top-bar .text-input span {
+#root .home .content .tadpoles .text-input span {
   color: #A4D48C;
   font-weight: 900;
   font-size: 16px;
 }
-#root .home .content .tadpoles .top-bar .button-input {
+#root .home .content .tadpoles .button-input {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -475,29 +467,37 @@ html, body {
   transition: 0.125s;
   cursor: pointer;
 }
-#root .home .content .tadpoles .top-bar .button-input:hover {
+#root .home .content .tadpoles .button-input:hover {
   background: #A4D48C;
 }
-#root .home .content .tadpoles .top-bar .text-button {
+#root .home .content .tadpoles .text-button {
   font-size: 18;
   font-weight: 400;
   color: #657a5a;
   width: 100%;
   text-align: center;
 }
-#root .home .content .tadpoles .top-bar .text-button .button {
+#root .home .content .tadpoles .text-button .button {
   font-weight: 900;
   text-decoration: underline;
   transition: 0.125s;
   cursor: pointer;
 }
-#root .home .content .tadpoles .top-bar .text-button .button:hover {
+#root .home .content .tadpoles .text-button .button:hover {
   color: #A4D48C;
 }
-#root .home .content .tadpoles .top-bar .button-input {
+#root .home .content .tadpoles .button-input {
   width: -moz-fit-content;
   width: fit-content;
   min-width: 100px;
+}
+#root .home .content .tadpoles .top-bar {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
 }
 #root .home .content .tadpoles .content {
   width: 100%;
@@ -589,6 +589,21 @@ html, body {
   border: 1px solid #3d463f;
   border-left: 0px;
   font-weight: 900;
+}
+#root .home .content .tadpoles .pagination {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+}
+#root .home .content .tadpoles .pagination span {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Roboto";
+  font-weight: 900;
+  color: #657a5a;
 }
 
 .roboto {

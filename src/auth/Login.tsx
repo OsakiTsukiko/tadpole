@@ -32,7 +32,7 @@ function Login() {
                 <div className='input-cont'>
                     <TextInput id={'username'} span={getTr('en').login.username_input.label} placeholder={getTr('en').login.username_input.placeholder} name='username' autocomplete='username' type='text' input_ref={username_input} />
                     <PasswordInput id={'password'} span={getTr('en').login.password_input.label} placeholder={getTr('en').login.password_input.placeholder} name='password' autocomplete='password' input_ref={password_input} />
-                    <ButtonInput text={getTr('en').login.submit_button} onclick={() => {
+                    <ButtonInput disabled={false} text={getTr('en').login.submit_button} onclick={() => {
                         setError(null)
                         let username, password;
                         if (username_input.current != null) {
