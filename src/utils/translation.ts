@@ -60,6 +60,12 @@ const Translation = {
             },
             search_button: {
                 label: 'Search!',
+            },
+            sort_button: {
+                label: {
+                    asc: 'A-Z',
+                    desc: 'Z-A',
+                }
             }
         }
     }

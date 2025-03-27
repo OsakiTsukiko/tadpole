@@ -497,6 +497,7 @@ html, body {
 #root .home .content .tadpoles .top-bar .button-input {
   width: -moz-fit-content;
   width: fit-content;
+  min-width: 100px;
 }
 #root .home .content .tadpoles .content {
   width: 100%;
