@@ -79,5 +79,7 @@
         width: 100%;
         flex: 1;
         border-top: 1px solid $text-input-border;
+        box-sizing: border-box;
+        padding: 10px;
     }
 }
