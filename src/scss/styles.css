@@ -894,7 +894,7 @@ html, body {
 #root .home .content .stats .chart {
   width: 100%;
   flex: 1;
-  border-top: 1px solid #3d463f;
+  border-top: 1px solid #657a5a;
   box-sizing: border-box;
   padding: 10px;
 }
