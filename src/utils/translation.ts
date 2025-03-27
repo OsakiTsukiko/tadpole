@@ -40,6 +40,27 @@ const Translation = {
             email: 'Invalid email!',
             confirm_password: 'Passwords DO NOT match!',
             unable_to_login: 'Login error! Please check if the username and password are correct!',
+            unable_to_register: 'Register error! Please check if the username and password are correct and available!',
+        }
+    },
+    home: {
+        seedling: {
+            search_input: {
+                label: 'Seedling Name',
+                placeholder: 'My Cool Seedling',
+            },
+            search_button: {
+                label: 'Search!',
+            }
+        },
+        tadpoles: {
+            search_input: {
+                label: 'Tadpole Username',
+                placeholder: 'Osaki',
+            },
+            search_button: {
+                label: 'Search!',
+            }
         }
     }
 }

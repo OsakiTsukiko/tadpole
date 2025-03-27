@@ -3,7 +3,7 @@ import { TextInput, ButtonInput, TextButton, PasswordInput } from './Input'
 import Title from './Title'
 import TitleIcon from '/frog.png';
 import { useNavigate } from "react-router";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { isPasswordValid, isUsernameValid } from '../utils/user_details';
 import ErrorPopup from './Error';
 import { getTr } from '../utils/translation';
@@ -17,7 +17,13 @@ function Login() {
 
     const [error, setError] = useState<string | null>(null);
 
-    const { handleLogin } = useTadpoles();
+    const { handleLogin, currentTP } = useTadpoles();
+    
+    useEffect(() => {
+        if (currentTP != null) {
+            navigate("/home");
+        }
+    }, [currentTP, navigate]);
 
     return (
         <div className='login'>
@@ -47,7 +53,7 @@ function Login() {
                             return;
                         }
 
-                        const success = handleLogin(username, password);
+                        const success = handleLogin(username, password, navigate);
                         if (!success) {
                             setError(getTr('en').log_reg.error.unable_to_login);
                             return;
@@ -57,7 +63,7 @@ function Login() {
                     }} />
                 </div>
                 <TextButton prefix='New to the pond?' text='Hop over to register!' suffix='🌿' onclick={() => {
-                    navigate("/register");
+                    navigate('/register');
                 }} />
                 {error && <ErrorPopup error={error} />}
             </div>

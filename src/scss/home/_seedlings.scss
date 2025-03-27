@@ -1,0 +1,135 @@
+.seedlings {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 25px;
+    gap: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    .top-bar {
+        width: 100%;
+        height: fit-content;
+        box-sizing: border-box;
+
+        display: flex;
+        gap: 10px;
+
+        @import '../auth/input';
+
+        .button-input {
+            width: fit-content;
+        }
+    }
+
+    .content {
+        width: 100%;
+        flex: 1;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        overflow-y: auto;
+
+        .seedling {
+            width: 100%;
+            height: fit-content;
+
+            display: flex;
+
+            background: $background-main-darker;
+            border: 1px solid $text-input-border;
+            padding: 15px;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            &:hover {
+                background: $background-main-lighter;
+            }
+            
+            .left {
+                flex: 1;
+                height: 100%;
+                
+                display: flex;
+                flex-direction: column;
+
+                .name {
+                    font-family: 'Roboto';
+                    font-weight: 900;
+                    font-size: 20px;
+                    color: $accent;
+                }
+
+                .description {
+                    font-family: 'Roboto';
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: $accent-dark;
+                }
+            }
+
+            .right {
+                width: fit-content;
+                height: 100%;
+                box-sizing: border-box;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .sprinkles {
+                    display: flex;
+                    box-sizing: border-box;
+
+                    color: $accent-dark;
+                    background-color: $background-main-lighter;
+                    border-radius: 5px;
+
+                    cursor: pointer;
+                    transition: .125s;
+
+                    &:hover {
+                        background-color: $background-main-darker;
+                    }
+
+                    .icon {
+                        width: fit-content;
+                        height: 100%;
+
+                        box-sizing: border-box;
+                        padding: 10px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+
+                        border-radius: 5px 0px 0px 5px;
+                        border: 1px solid $text-input-border;
+                    }
+
+                    .number {
+                        width: fit-content;
+                        height: 100%;
+                        margin: 0 auto;
+
+                        box-sizing: border-box;
+                        padding: 10px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+
+                        border-radius: 0px 5px 5px 0px;
+                        border: 1px solid $text-input-border;
+                        border-left: 0px;
+
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+}

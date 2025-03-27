@@ -3,10 +3,11 @@ import { TextInput, ButtonInput, TextButton, PasswordInput } from './Input'
 import Title from './Title'
 import TitleIcon from '/frog.png';
 import { useNavigate } from "react-router";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { isEmailValid, isPasswordValid, isUsernameValid } from '../utils/user_details';
 import { getTr } from '../utils/translation';
 import ErrorPopup from './Error';
+import { useTadpoles } from '../TadpoleProvider';
 
 function Register() {
     let navigate = useNavigate();
@@ -17,6 +18,14 @@ function Register() {
     let confirm_password_input: React.RefObject<HTMLInputElement | null> = React.createRef();
     
     const [error, setError] = useState<string | null>(null);
+
+    const { handleRegister, currentTP } = useTadpoles();
+        
+    useEffect(() => {
+        if (currentTP != null) {
+            navigate("/home");
+        }
+    }, [currentTP, navigate]);
 
     return (
         <div className='register'>
@@ -65,12 +74,18 @@ function Register() {
                             setError(getTr('en').log_reg.error.confirm_password);
                             return;
                         }
+
+                        const success = handleRegister(username, email, password, navigate);
+                        if (!success) {
+                            setError(getTr('en').log_reg.error.unable_to_register);
+                            return;
+                        }
                         
                         // TODO: register
                     }} />
                 </div>
                 <TextButton prefix='Already have a pad?' text='Leap back in!' suffix='🌿' onclick={() => {
-                    navigate("/login");
+                    navigate('/login');
                 }} />
                 {error && <ErrorPopup error={error} />}
             </div>

@@ -2,12 +2,14 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 import { makeRandomTadpole } from './utils/random_data';
 import { getTadpole, hasTadpole } from './utils/misc';
 import { Tadpole } from './domain/user';
+import { NavigateFunction, useNavigate } from 'react-router';
 
 // Define types for the context
 interface TadpoleContextType {
-  tadpoles: Tadpole[];
-  currentTP: Tadpole | null;
-  handleLogin: (username: string, password: string) => boolean;
+    tadpoles: Tadpole[];
+    currentTP: Tadpole | null;
+    handleLogin: (username: string, password: string, navigate: NavigateFunction) => boolean;
+    handleRegister: (username: string, email: string, password: string, navigate: NavigateFunction) => boolean;
 }
 
 const TadpoleContext = createContext<TadpoleContextType | undefined>(undefined);
@@ -33,7 +35,8 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
     // Call it once on component mount
     useState(generateData);
 
-    const handleLogin = (username: string, password: string): boolean => {
+    const handleLogin = (username: string, password: string, navigate: NavigateFunction): boolean => {
+
         const index = getTadpole(tadpoles, username);
         if (index < 0 || index >= tadpoles.length) return false;
         const t = tadpoles[index];
@@ -41,10 +44,11 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
         if (t.password !== password) return false;
 
         setCurrentTP(t);
+        navigate('/home');
         return true;
     };
 
-    const handleRegister = (username: string, email: string, password: string): boolean => {
+    const handleRegister = (username: string, email: string, password: string,  navigate: NavigateFunction): boolean => {
         if (hasTadpole(tadpoles, username)) return false;
 
         const tp = new Tadpole(username, email, password, "", (new Date()).getTime());
@@ -55,11 +59,12 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
         ]);
 
         setCurrentTP(tp);
+        navigate('/home');
         return true;
     }
 
   return (
-    <TadpoleContext.Provider value={{ tadpoles, currentTP, handleLogin }}>
+    <TadpoleContext.Provider value={{ tadpoles, currentTP, handleLogin, handleRegister }}>
       {children}
     </TadpoleContext.Provider>
   );

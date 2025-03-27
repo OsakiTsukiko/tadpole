@@ -5,6 +5,10 @@ import './scss/styles.css'
 import Login from './auth/Login.tsx';
 import Register from './auth/Register.tsx';
 import { TadpoleProvider } from './TadpoleProvider.tsx';
+import Home from './home/Home.tsx';
+import Settings from './home/Settings.tsx';
+import Seedlings from './home/Seedlings.tsx';
+import Tadpoles from './home/Tadpoles.tsx';
 
 
 /*
@@ -16,8 +20,16 @@ createRoot(document.getElementById('root')!).render(
     <TadpoleProvider>
       <HashRouter>
         <Routes>
-          <Route index path='login' element={<Login />} />
+          
+          <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
+
+          <Route path='home' element={<Home />}>
+            <Route index path='tadpoles' element={<Tadpoles />} />
+            <Route index path='seedlings' element={<Seedlings />} />
+            <Route path='settings' element={<Settings />} />
+          </Route>
+
         </Routes>
       </HashRouter>
     </TadpoleProvider>

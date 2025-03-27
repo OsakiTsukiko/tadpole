@@ -1,0 +1,38 @@
+.navbar {
+    min-width: 300px;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+    gap: 5px;
+
+    .navlink {
+        width: 100%;
+        height: fit-content;
+        box-sizing: border-box;
+        
+        padding: 12.5px;
+        
+        font-size: 18px;
+        font-weight: 900;
+        
+        color: $accent-dark;
+        background: $background-main-darker;
+
+        border-radius: 10px;
+        transition: .125s;
+
+        &.active {
+            background: $background-main;
+            color: $accent;
+        }
+
+        &:hover {
+            background: $background-main-lighter;
+            color: $accent;
+        }
+    }
+}
