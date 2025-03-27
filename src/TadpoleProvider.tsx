@@ -11,6 +11,7 @@ interface TadpoleContextType {
     setTP: (t: Tadpole | null) => void,
     handleLogin: (username: string, password: string, navigate: NavigateFunction) => boolean;
     handleRegister: (username: string, email: string, password: string, navigate: NavigateFunction) => boolean;
+    updateTadpole: (u: Tadpole) => void;
 }
 
 const TadpoleContext = createContext<TadpoleContextType | undefined>(undefined);
@@ -64,15 +65,23 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
         return true;
     }
   
-  const setTP = (t: Tadpole | null): void => {
-    setCurrentTP(t);
-  }
+    const setTP = (t: Tadpole | null): void => {
+        setCurrentTP(t);
+    }
 
-  return (
-    <TadpoleContext.Provider value={{ tadpoles, currentTP, setTP, handleLogin, handleRegister }}>
-      {children}
-    </TadpoleContext.Provider>
-  );
+    const updateTadpole = (updatedTadpole: Tadpole): void => {
+        setTadpoles(prevTadpoles => 
+            prevTadpoles.map(tadpole => 
+              tadpole.username === updatedTadpole.username ? updatedTadpole : tadpole
+            )
+        );
+    }
+
+    return (
+        <TadpoleContext.Provider value={{ tadpoles, currentTP, setTP, handleLogin, handleRegister, updateTadpole }}>
+          {children}
+        </TadpoleContext.Provider>
+    );
 };
 
 // Custom hook to use the context

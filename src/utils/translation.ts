@@ -85,6 +85,14 @@ const Translation = {
                 label: 'Update Description',
                 placeholder: 'Hello, my name is ...',
             },
+            update_description: "Update Description!",
+            update_password: "Change Password!",
+            delete: "Delete!",
+            error: {
+                incorrect_password: "Incorrect password!",
+                invalid_password: 'Invalid password! Password must be between 6 and 32 characters long and only contain "A-Z a-z 0-9 and -!_$#@"',
+                missmatched_passwords: 'Passwords DO NOT match!',
+            },
         }
     }
 }

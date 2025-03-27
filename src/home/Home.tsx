@@ -25,7 +25,7 @@ function Home() {
                 <Navbar />
                 <div className='padding'></div>
                 <div className='footer-cont'>
-                    <ImportantButtonInput text='Log Out' onclick={() => { setTP(null); }} disabled={false} />
+                    <ImportantButtonInput text='Hop Off' onclick={() => { setTP(null); }} disabled={false} />
                 </div>
             </div>
             <div className='content'>

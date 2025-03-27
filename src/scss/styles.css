@@ -818,6 +818,20 @@ html, body {
 #root .home .content .settings .content .text-button .button:hover {
   color: #A4D48C;
 }
+#root .home .content .settings .content .error-popup {
+  width: 100%;
+  box-sizing: border-box;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  background: #743a3a;
+  border: 1px solid #cd5c5c;
+  border-radius: 5px;
+  color: #ffe4e0;
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+}
 
 .roboto {
   font-family: "Roboto", sans-serif;
