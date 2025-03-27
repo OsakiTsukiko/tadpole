@@ -8,6 +8,7 @@ import { NavigateFunction, useNavigate } from 'react-router';
 interface TadpoleContextType {
     tadpoles: Tadpole[];
     currentTP: Tadpole | null;
+    setTP: (t: Tadpole | null) => void,
     handleLogin: (username: string, password: string, navigate: NavigateFunction) => boolean;
     handleRegister: (username: string, email: string, password: string, navigate: NavigateFunction) => boolean;
 }
@@ -62,9 +63,13 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
         navigate('/home');
         return true;
     }
+  
+  const setTP = (t: Tadpole | null): void => {
+    setCurrentTP(t);
+  }
 
   return (
-    <TadpoleContext.Provider value={{ tadpoles, currentTP, handleLogin, handleRegister }}>
+    <TadpoleContext.Provider value={{ tadpoles, currentTP, setTP, handleLogin, handleRegister }}>
       {children}
     </TadpoleContext.Provider>
   );

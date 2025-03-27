@@ -19,6 +19,20 @@
         flex-direction: column;
         align-items: center;
 
+        @import '../auth/input';
+
+        .padding {
+            flex: 1;
+        }
+
+        .footer-cont {
+            box-sizing: border-box;
+            width: 100%;
+            height: fit-content;
+
+            padding: 15px;
+        }
+
         .username {
             width: 100%;
             box-sizing: border-box;
@@ -59,5 +73,6 @@
         box-sizing: border-box;
         @import './seedlings';
         @import './tadpoles';
+        @import './settings';
     }
 }

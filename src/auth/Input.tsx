@@ -43,6 +43,16 @@ function ButtonInput(args: {
     )
 }
 
+function ImportantButtonInput(args: {
+    text: string,
+    onclick: () => void,
+    disabled: boolean,
+}) {
+    return (
+        <button disabled={args.disabled} className='button-input roboto unselectable important' onClick={args.onclick}>{args.text}</button>
+    )
+}
+
 function TextButton(args: {
     prefix: string,
     text: string,
@@ -54,4 +64,4 @@ function TextButton(args: {
     )
 }
 
-export { TextInput, PasswordInput, ButtonInput, TextButton }
+export { TextInput, PasswordInput, ButtonInput, TextButton, ImportantButtonInput }

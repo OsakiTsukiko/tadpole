@@ -61,6 +61,17 @@
     &:hover {
         background: $button-input-background-hover;
     }
+
+    &.important {
+        background-color: $error-popup-background;
+        border: 1px solid $error-popup-border;
+        color: $error-popup-color;
+
+        &:hover {
+            background-color: $error-popup-border;
+            border: 1px solid $error-popup-color;
+        }
+    }
 }
 
 .text-button {

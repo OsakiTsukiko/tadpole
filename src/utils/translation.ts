@@ -67,6 +67,24 @@ const Translation = {
                     desc: 'Z-A',
                 }
             }
+        },
+        settings: {
+            old_password_input: {
+                label: 'Old Secret Ribbit',
+                placeholder: 'Old Password',
+            },
+            new_password_input: {
+                label: 'New Secret Ribbit',
+                placeholder: 'New Password',
+            },
+            confirm_new_password_input: {
+                label: 'Confirm New Secret Ribbit',
+                placeholder: 'Confirm New Password',
+            },
+            description: {
+                label: 'Update Description',
+                placeholder: 'Hello, my name is ...',
+            },
         }
     }
 }
