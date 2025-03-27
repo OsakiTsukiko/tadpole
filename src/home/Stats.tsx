@@ -1,19 +1,20 @@
+import { useState } from 'react';
+import { ButtonInput } from '../auth/Input';
 import '../scss/styles.css'
 import { useTadpoles } from '../TadpoleProvider';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 function Stats() {
     const { currentTP, tadpoles } = useTadpoles();
-    
+
     const filteredTadpoles = tadpoles.sort((a, b) => 
         b.seedlings.length - a.seedlings.length
     );
 
     const chartData = filteredTadpoles.map(tp => ({
         name: tp.username,
-        value: tp.seedlings.length,
+        seedlings: tp.seedlings.length,
     }));
-
 
     return (
         <div className='stats'>
@@ -32,7 +33,7 @@ function Stats() {
                         <XAxis dataKey="name" />
                         <YAxis />
                         <Tooltip />
-                        <Bar dataKey="value" fill="#A4D48C" />
+                        <Bar dataKey="seedlings" fill="#A4D48C" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>

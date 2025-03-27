@@ -839,6 +839,86 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+#root .home .content .stats .text-input {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 10px;
+  background: #2f3530;
+  border: 1px solid #3d463f;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: text;
+}
+#root .home .content .stats .text-input input {
+  flex: 1;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: #A4D48C;
+}
+#root .home .content .stats .text-input input::-moz-placeholder {
+  color: #657a5a;
+}
+#root .home .content .stats .text-input input::placeholder {
+  color: #657a5a;
+}
+#root .home .content .stats .text-input span {
+  color: #A4D48C;
+  font-weight: 900;
+  font-size: 16px;
+}
+#root .home .content .stats .button-input {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 10px;
+  background: #657a5a;
+  color: #2f3530;
+  font-weight: 900;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 5px;
+  transition: 0.125s;
+  cursor: pointer;
+}
+#root .home .content .stats .button-input:hover {
+  background: #A4D48C;
+}
+#root .home .content .stats .button-input.important {
+  background-color: #743a3a;
+  border: 1px solid #cd5c5c;
+  color: #ffe4e0;
+}
+#root .home .content .stats .button-input.important:hover {
+  background-color: #cd5c5c;
+  border: 1px solid #ffe4e0;
+}
+#root .home .content .stats .text-button {
+  font-size: 18;
+  font-weight: 400;
+  color: #657a5a;
+  width: 100%;
+  text-align: center;
+}
+#root .home .content .stats .text-button .button {
+  font-weight: 900;
+  text-decoration: underline;
+  transition: 0.125s;
+  cursor: pointer;
+}
+#root .home .content .stats .text-button .button:hover {
+  color: #A4D48C;
+}
 #root .home .content .stats .list {
   width: 100%;
   flex: 1;
@@ -890,6 +970,15 @@ html, body {
 }
 #root .home .content .stats .list .element:nth-child(3) .username, #root .home .content .stats .list .element:nth-child(3) .value {
   color: #867258;
+}
+#root .home .content .stats .controlls {
+  box-sizing: border-box;
+  padding: 10px;
+  border-top: 1px solid #657a5a;
+}
+#root .home .content .stats .controlls .button-input {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #root .home .content .stats .chart {
   width: 100%;

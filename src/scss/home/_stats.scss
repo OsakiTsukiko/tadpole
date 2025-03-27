@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
 
+    @import '../auth/input';
+
     .list {
         width: 100%;
         flex: 1;
@@ -72,6 +74,16 @@
                     color: $stats-top-3-prim;
                 }
             }
+        }
+    }
+
+    .controlls {
+        box-sizing: border-box;
+        padding: 10px;
+        border-top: 1px solid $accent-dark;
+
+        .button-input {
+            width: fit-content;
         }
     }
 
