@@ -9,6 +9,7 @@ import Home from './home/Home.tsx';
 import Settings from './home/Settings.tsx';
 import Seedlings from './home/Seedlings.tsx';
 import Tadpoles from './home/Tadpoles.tsx';
+import Stats from './home/Stats.tsx';
 
 
 /*
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')!).render(
             <Route index path='tadpoles' element={<Tadpoles />} />
             <Route index path='seedlings' element={<Seedlings />} />
             <Route path='settings' element={<Settings />} />
+            <Route path='stats' element={<Stats />} />
           </Route>
 
         </Routes>

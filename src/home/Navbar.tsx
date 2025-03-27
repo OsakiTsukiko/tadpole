@@ -7,6 +7,7 @@ function Navbar() {
             <NavLink className='navlink roboto unselectable' to="/home/tadpoles">Tadpoles</NavLink>
             <NavLink className='navlink roboto unselectable' to="/home/seedlings">Seedlings</NavLink>
             <NavLink className='navlink roboto unselectable' to="/home/settings">Settings</NavLink>
+            <NavLink className='navlink roboto unselectable' to="/home/stats">Statistics</NavLink>
         </div>
     )
 }

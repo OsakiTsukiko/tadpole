@@ -832,6 +832,70 @@ html, body {
   font-size: 18px;
   text-align: center;
 }
+#root .home .content .stats {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+#root .home .content .stats .list {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#root .home .content .stats .list .element {
+  width: 100%;
+  box-sizing: border-box;
+  background: #191b1a;
+  border-radius: 5px;
+  border: 1px solid #3d463f;
+  display: flex;
+  padding: 10px;
+}
+#root .home .content .stats .list .element .username {
+  font-weight: 900;
+  font-size: 18px;
+  color: #A4D48C;
+  min-width: 200px;
+  flex: 1;
+}
+#root .home .content .stats .list .element .value {
+  font-weight: 900;
+  font-size: 18px;
+  color: #657a5a;
+}
+#root .home .content .stats .list .element:nth-child(1) {
+  border: 1px solid #faf092;
+  background-color: #7a764e;
+}
+#root .home .content .stats .list .element:nth-child(1) .username, #root .home .content .stats .list .element:nth-child(1) .value {
+  color: #faf092;
+}
+#root .home .content .stats .list .element:nth-child(2) {
+  border: 1px solid #cecece;
+  background-color: #646464;
+}
+#root .home .content .stats .list .element:nth-child(2) .username, #root .home .content .stats .list .element:nth-child(2) .value {
+  color: #cecece;
+}
+#root .home .content .stats .list .element:nth-child(3) {
+  border: 1px solid #867258;
+  background-color: #312c25;
+}
+#root .home .content .stats .list .element:nth-child(3) .username, #root .home .content .stats .list .element:nth-child(3) .value {
+  color: #867258;
+}
+#root .home .content .stats .chart {
+  width: 100%;
+  flex: 1;
+  border-top: 1px solid #3d463f;
+}
 
 .roboto {
   font-family: "Roboto", sans-serif;
