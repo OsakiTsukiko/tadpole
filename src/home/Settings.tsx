@@ -7,7 +7,7 @@ import ErrorPopup from '../auth/Error';
 import { isPasswordValid } from '../utils/user_details';
 
 function Settings() {
-    const { currentTP, updateTadpole, setTP } = useTadpoles();
+    const { currentTP, updateTadpole, setTP, removeTadpole } = useTadpoles();
 
     const [error, setError] = useState<string | null>(null);
 
@@ -62,6 +62,15 @@ function Settings() {
         if (confirm_new_password_input.current?.value) confirm_new_password_input.current.value = "";
     }
 
+    const deleteTadpole = () => {
+        const conf = confirm("Are you sure you want to DELETE your account?");
+        // TODO: Make fancy ^
+        if (!conf) return;
+
+        if (currentTP) removeTadpole(currentTP.username);
+        setTP(null);
+    }
+
     return (
         <div className='settings'>
             <div className='content'>
@@ -73,7 +82,7 @@ function Settings() {
                 <TextInput id='confirm_new_password' span={getTr('en').home.settings.confirm_new_password_input.label} placeholder={getTr('en').home.settings.confirm_new_password_input.placeholder} name='confirm_new_password' autocomplete='confirm_new_password' type='password' input_ref={confirm_new_password_input} />
                 <ButtonInput text={getTr('en').home.settings.update_password} onclick={() => { updatePassword(); }} disabled={false} />
                 
-                <ImportantButtonInput text={getTr('en').home.settings.delete} onclick={() => { }} disabled={false} />
+                <ImportantButtonInput text={getTr('en').home.settings.delete} onclick={() => { deleteTadpole(); }} disabled={false} />
                 {error && <ErrorPopup error={error} />}
             </div>
         </div>

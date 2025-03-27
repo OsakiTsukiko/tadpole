@@ -12,6 +12,7 @@ interface TadpoleContextType {
     handleLogin: (username: string, password: string, navigate: NavigateFunction) => boolean;
     handleRegister: (username: string, email: string, password: string, navigate: NavigateFunction) => boolean;
     updateTadpole: (u: Tadpole) => void;
+    removeTadpole: (username: string) => void;
 }
 
 const TadpoleContext = createContext<TadpoleContextType | undefined>(undefined);
@@ -76,9 +77,17 @@ export const TadpoleProvider = ({ children }: { children: ReactNode }) => {
             )
         );
     }
+  
+    const removeTadpole = (username: string): void => {
+      setTadpoles(prevTadpoles => 
+          prevTadpoles.filter(tadpole => 
+            tadpole.username != username
+          )
+      );
+    }
 
     return (
-        <TadpoleContext.Provider value={{ tadpoles, currentTP, setTP, handleLogin, handleRegister, updateTadpole }}>
+        <TadpoleContext.Provider value={{ tadpoles, currentTP, setTP, handleLogin, handleRegister, updateTadpole, removeTadpole }}>
           {children}
         </TadpoleContext.Provider>
     );
